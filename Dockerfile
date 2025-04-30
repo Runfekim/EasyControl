@@ -1,10 +1,10 @@
-FROM runpod/pytorch:2.1.2-py3.10-cuda12.1.0
+FROM python:3.10-slim
 
-WORKDIR /app
+WORKDIR /
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
 
+# 애플리케이션 코드 복사
 COPY . .
 
-CMD ["python", "app.py"]
+# 실행할 명령어 설정
+CMD ["python", "-u", "rp_handler.py"]
